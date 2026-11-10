@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Odd or Even Checker</title>
+</head>
+<body>
+  <h1>Odd or Even Checker</h1>
+
+  <input type="number" id="number" placeholder="Enter a number">
+  <button onclick="checkNumber()">Check</button>
+
+  <p id="result"></p>
+
+  <script>
+    const checkOddEven = (num) => {
+      return num % 2 === 0 ? "Even" : "Odd";
+    };
+
+    function checkNumber() {
+      const input = document.getElementById("number");
+      const result = document.getElementById("result");
+
+      if (input.value.trim() === "") {
+        result.textContent = "Please enter a number.";
+        return;
+      }
+
+      result.textContent =
+        `${input.value} is ${checkOddEven(Number(input.value))}.`;
+    }
+  </script>
+</body>
+</html>
